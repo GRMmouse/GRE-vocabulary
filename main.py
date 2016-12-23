@@ -1,6 +1,16 @@
 import os, random
 from Tkinter import *
-from vocab_helper import *
+
+def read(filename, mode="rt"):
+    # rt = "read text"
+    with open(filename, mode) as fin:
+        return fin.read()
+
+def write(filename, contents, mode="wt"):
+    # wt = "write text"
+    with open(filename, mode) as fout:
+        fout.write(contents)
+
 
 class Game(object):
     def __init__(self,width=800,height=600):
