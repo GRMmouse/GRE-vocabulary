@@ -31,4 +31,4 @@ def wholeToRaw():
     vocabs = map(lambda s: s.split('@')[0], content)
     write("raw_vocab.txt", ('\n'.join(sorted(vocabs))))
 
-rawToWhole()
+#rawToWhole()
