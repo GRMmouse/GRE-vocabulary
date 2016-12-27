@@ -61,8 +61,6 @@ class Game(object):
 
     def onTimerFired(self):
         if (self.curIndex >= self.length):
-            content = map(lambda l:  "@".join(l), self.vocabs)
-            write("vocab.txt", "\n".join(sorted(content)))
             return
         self.redrawAll()
         self.canvas.after(self.timerDelay,self.onTimerFired)
@@ -79,6 +77,8 @@ class Game(object):
         self.initAnimation()
         self.onTimerFired()
         self.root.mainloop()
+        content = map(lambda l:  "@".join(l), self.vocabs)
+        write("vocab.txt", "\n".join(sorted(content)))
         print("Done")
 
 def main():
