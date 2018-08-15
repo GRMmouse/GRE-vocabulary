@@ -20,7 +20,7 @@ def rawToWhole():
         word = content[index]
         meaning = "#".join(getDefs(word))
         content[index] = "%s@%s@0"%(word, meaning)
-        print content[index]
+        print( content[index])
     content = "\n".join(content)
     write("vocab_with_def.txt", content)
     raw_input("Press enter to quit.")

@@ -1,5 +1,5 @@
 import os, random
-from Tkinter import *
+from tkinter import *
 from vocab_helper import *
 
 class Game(object):

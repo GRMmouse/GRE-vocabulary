@@ -9,11 +9,11 @@ chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ;,."
 # Globals are evil.
 
 def getDefs(word):
-    print "Opening page %s"%(URL+word)
+    print ("Opening page %s"%(URL+word))
     page = urllib.urlopen(URL+word)
-    print "Reading..."
+    print ("Reading...")
     html = page.read()
-    print "Parsing..."
+    print ("Parsing...")
     imglist = re.findall(PAT,html)
     result = set()
     for word in imglist:
@@ -45,16 +45,19 @@ def getDefs(word):
     return result
    
 def lookUp(word):
-    print "*"*80
+    print ("*"*80)
     result1 = getDefs(word)
     counter = 0
-    print "The meaning of %s is:"%word
+    print("The meaning of %s is:"%word)
     for meaning in result1:
             counter += 1
-            print "%d. %s"%(counter, meaning)
-    print "*"*80
+            print("%d. %s"%(counter, meaning))
+    print("*"*80)
 
 def test():
     lookUp("abatement")
     lookUp("abate")
     lookUp("adjourn")
+
+if __name__ == "__main__":
+    test()
